@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aMov - Amey Movies</title>
+    <link rel="icon" href="aMov Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+
+<body>
+    <center>
+        <div class="up" style="font-size: 50px;">
+            <img src="aMov Logo.png" width="25%"><br>Amey Movies
+            <br>
+            <input type="text" placeholder="Search Movie Here....." class="inp" id="myInput" onkeyup="myFunction()">
+        </div>
+        <ul id="myUL">
+            <li onclick="window.open('/kgf2','_self')">
+                <h1><a href="/kgf2">KGF CHAPTER - 2</a></h1>
+            </li>
+            <li onclick="window.open('/pushpa1','_self')">
+                <h1><a href="/pushpa1">PUSHPA 1 - THE RISE</a></h1>
+            </li>
+            <li onclick="window.open('/kgf1','_self')">
+                <h1><a href="/kgf1">KGF CHAPTER - 1</a></h1>
+            </li>
+            <li onclick="window.open('/rrr','_self')">
+                <h1><a href="/rrr">RRR</a></h1>
+            </li>
+            <li onclick="window.open('/don','_self')">
+                <h1><a href="/don">DON</a></h1>
+            </li>
+            <li onclick="window.open('/sholay','_self')">
+                <h1><a href="/sholay">SHOLAY</a></h1>
+            </li>
+            <li onclick="window.open('/dewaar','_self')">
+                <h1><a href="/dewaar">DEWAAR</a></h1>
+            </li>
+            <li onclick="window.open('/anand','_self')">
+                <h1><a href="/anand">ANAND</a></h1>
+            </li>
+            <li onclick="window.open('/alavaikuntapuramloo','_self')">
+                <h1><a href="/alavaikuntapuramloo">ALAVAIKUNTAPURAMLOO</a></h1>
+            </li>
+            <li onclick="window.open('/dear-zindagi','_self')">
+                <h1><a href="/dear-zindagi">DEAR ZINDAGI</a></h1>
+            </li>
+
+            more movies are on their way
+        </ul>
+    </center>
+    <button id="rate-us" onclick="window.open('https://forms.office.com/r/TKt6qxFpyk','_blank')"><span class="material-symbols-outlined">star</span></button>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
